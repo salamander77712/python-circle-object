@@ -1,0 +1,37 @@
+import math
+class Circle:
+    def __init__(self, radius=1):
+        self._radius = radius
+        self._diameter = radius * 2
+        self._area = radius * radius * math.pi
+    def __repr__(self):
+        return f"Circle({self.radius})"
+
+    def __str__(self):
+        return f"Circle({self.radius})"
+    @property
+    def radius(self):
+        return self._radius
+    @radius.setter
+    def radius(self, new):
+        if new < 0:
+            raise ValueError('radius cannot be negative')
+        self._radius = new
+        self._diameter = new * 2
+        self._area = new * new * math.pi
+    @property
+    def diameter(self):
+        return self._diameter
+    @diameter.setter
+    def diameter(self, new):
+        if new < 0:
+            raise ValueError
+        self._radius = new / 2
+        self._diameter = new
+        self._area = (new / 2) * (new / 2) * math.pi
+    @property
+    def area(self):
+        return self._area
+    @area.setter
+    def area(self, new):
+        raise AttributeError
